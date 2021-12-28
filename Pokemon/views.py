@@ -42,7 +42,6 @@ def poke_char(request, id_pokemon):
             types['type']['url'] = types['type']['url'][31:-1]
         pokemon['abilities'] = results['abilities']
         pokemon['moves'] = results['moves']
-
     return render(request, 'pokemon/char.html', {'pokemon': pokemon})
 
 def poke_type(request, id_type):
