@@ -1,0 +1,28 @@
+{% extends 'pokemon/index.html' %}
+
+{% block body %}
+<h1>{{ pokemon.name }}</h1>
+<img src="{{ pokemon.img }}" alt="lol" width="auto" height="180px">
+<h3>Peso: {{ pokemon.weight }}</h3>
+<h3>Altura: {{ pokemon.height }}</h3>
+
+{% for slots in pokemon.types %}
+<a class="btn btn-danger" href="{% url 'pokemon:pokemon_type' slots.type.url %}">{{ slots.type.name }}</a>
+
+{% endfor %}
+
+<h2>Habilidades</h2>
+{% for ability in pokemon.abilities %}
+<div class="alert alert-info" role="alert">
+    {{ability.ability.name}}
+</div>
+{% endfor %}
+
+<h2>Movimientos</h2>
+{% for move in pokemon.moves %}
+<div class="alert alert-dark" role="alert">
+    {{ move.move.name }}
+</div>
+{% endfor %}
+
+{% endblock %}

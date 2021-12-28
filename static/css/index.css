@@ -1,0 +1,15 @@
+ul.flex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+li {
+  margin: 30px;
+  list-style-type: none;
+}
+
+ul.flex li {
+  text-align: center;
+}

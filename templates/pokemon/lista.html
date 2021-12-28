@@ -1,0 +1,17 @@
+{% extends 'pokemon/index.html' %}
+
+{%block body %}
+<div>
+    <ul class="flex">
+        {% for pokemon in list %}
+
+        <li>
+            <img src="{{ pokemon.img }}" alt="imagen" width="auto" height="100px">
+            <h4>{{ pokemon.name }}</h4>
+            <a class="btn btn-primary" href="{% url 'pokemon:pokemon_char' pokemon.id %}"> Características</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
